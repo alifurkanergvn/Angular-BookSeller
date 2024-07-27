@@ -1,1 +1,13 @@
-<p>not-found works!</p>
+<div class="container">
+  <div class="row">
+    <!--md (medium), bu sınıfın orta boyutlu ve daha büyük ekranlarda (>= 768px) geçerli olacağını belirtir.  12= sütun tüm satırı kaplayacaktır.   -->
+    <div class="col-md-12 text-center">
+      <span class="display-1">404</span>
+      <!--  mb (margin-bottom) 4, boşluğun boyutunu belirtir. 0-5 arasında değer alır. lead: daha büyük ve dikkat çekici bir metin stili -->
+      <div class="mb-4 lead">
+        Oops! We can't seem to find the page you are looking for.
+      </div>
+      <button [routerLink]="['/home']" class="btn btn-link">Back to Home</button>
+    </div>
+  </div>
+</div>
