@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {Router, RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from "./guest/home/home.component";
 import {LoginComponent} from "./guest/login/login.component";
 import {RegisterComponent} from "./guest/register/register.component";
@@ -31,4 +31,11 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+  // Bilinmeyen path ile istek gelirse aşağıda 404 e yönlendirme işlemini yaptık
+  constructor(private router: Router) {
+    this.router.errorHandler = (error:any) => {
+      this.router.navigate(['/404']);
+    };
+  }
+}
