@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+
+/*node_modules altındaki bootstrap i import etmek için tilda(~) kullanırız */
+/*@import "bootstrap/dist/css/bootstrap.min.css";
+  angular.json içerisinde styles'ta belirttiğimiz için burası fazla oldu*/
+
