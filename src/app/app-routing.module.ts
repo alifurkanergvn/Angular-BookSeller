@@ -13,6 +13,9 @@ const routes: Routes = [
   // Direkt pathsiz girişteki yönlendirme
   //pathMatch: 'full': Yalnızca URL tamamen eşleştiğinde yönlendirme yapılır.
   // Angular'da pathMatch özelliğini belirtmezseniz, varsayılan olarak 'prefix' kabul edilir. Sıkıntı olur / asd şeklinde istek atarsan başta boşluk olduğu için direkt home a gider
+  // path: Bu, URL yolunu belirler. Kullanıcı, /register yoluna gittiğinde bu yönlendirme kuralı tetiklenir.
+  //component: RegisterComponent: Bu, belirtilen URL yoluna yönlendirme yapılırken gösterilecek bileşeni belirler. Kullanıcı /register yoluna gittiğinde RegisterComponent bileşeni yüklenir ve görüntülenir.
+
   {path: '', redirectTo: 'home', pathMatch: 'full'},
 
   {path: 'home', component: HomeComponent},
