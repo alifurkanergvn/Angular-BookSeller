@@ -10,14 +10,3 @@ border: 1px solid #727171: Bu, bileşenin çevresine 1 piksel genişliğinde, d�
   border: 1px solid #727171;
 }
 
-.custom-card {
-  width: 350px;
-  /*Küçük ekranlar da da responsive olması için max-witdh kullandık Öğenin içeriği veya diğer stil özellikleri, kapsayıcı öğenin genişliğini aşarsa, öğe otomatik olarak küçültülür */
-  max-width: 100%;
-  background-color: #ffffff;
-}
-
-.user-icon{
-  font-size: 100px;
-  color: #50A057;
-}

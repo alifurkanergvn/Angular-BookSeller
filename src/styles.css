@@ -4,3 +4,14 @@
 /*@import "bootstrap/dist/css/bootstrap.min.css";
   angular.json içerisinde styles'ta belirttiğimiz için burası fazla oldu*/
 
+.custom-card {
+  width: 350px;
+  /*Küçük ekranlar da da responsive olması için max-witdh kullandık Öğenin içeriği veya diğer stil özellikleri, kapsayıcı öğenin genişliğini aşarsa, öğe otomatik olarak küçültülür */
+  max-width: 100%;
+  background-color: #ffffff;
+}
+
+.user-icon{
+  font-size: 100px;
+  color: #50A057;
+}
