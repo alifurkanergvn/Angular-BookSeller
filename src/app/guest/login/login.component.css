@@ -1,0 +1,11 @@
+/*host: Componente özel tüm html de geçerli kullanım sağlar
+height: 100vh: Bu, bileşenin yüksekliğini ekranın (viewport) tamamına ayarlar. 100vh değeri, viewport yüksekliğinin %100'ü anlamına gelir.
+display: block: Bu, bileşeni bir blok düzeyinde (block-level) eleman yapar. Blok düzeyindeki elemanlar, varsayılan olarak tam genişlik kaplar ve altlarındaki diğer elemanlar yeni bir satırda başlar.
+border: 1px solid #727171: Bu, bileşenin çevresine 1 piksel genişliğinde, düz (solid) ve #727171 rengi ile belirlenmiş bir kenarlık ekler.
+*/
+:host{
+  height: 100vh;
+  display: block;
+  background-color: #727171;
+  border: 1px solid #727171;
+}

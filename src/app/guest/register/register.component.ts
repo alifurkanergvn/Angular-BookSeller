@@ -38,9 +38,7 @@ export class RegisterComponent implements OnInit {
           this.errorMessage = "Unexpected error occured. Error is : " +err?.errorMessage;
           console.log(err);
         }
-
       }
-
     )
   }
 
