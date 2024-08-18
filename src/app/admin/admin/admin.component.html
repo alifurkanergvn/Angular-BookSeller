@@ -1,1 +1,45 @@
-<p>admin works!</p>
+<!-- Tüm içeriği sarmak için cantainer kullandım ve padding ekledim -->
+<!--  .container>.pt-5 -->
+<div class="container">
+  <div class="pt-5">
+<!--    .card>.card-header+.card-body>table.table.table-stripe-->
+    <div class="card">
+      <div class="card-header">
+        <!-- .row>.col-6>h3-->
+        <div class="row">
+          <div class="col-6">
+            <h3>All Books</h3>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <table class="table table-stripe">
+          <!-- (thead>tr>th[scope='col']*6)+tbody>tr>th[scope='row']+td*5 -->
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Price</th>
+            <th scope="col">Author</th>
+            <th scope="col">Date</th>
+            <th scope="col">Action</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let item of bookList; index as ind">
+            <th scope="row">{{ind + 1}}</th>
+            <td>{{item.title}}</td>
+            <td>{{item.price | currency: 'TRY':'symbol-narrow'}}</td>
+            <td>{{item.author}}</td>
+            <td>{{item.createTime | date:'medium'}}</td>
+            <td>
+              <button class="btn btn-primary me-1">Edit</button>
+              <button class="btn btn-danger">Delete</button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
