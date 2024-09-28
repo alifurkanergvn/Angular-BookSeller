@@ -1,0 +1,32 @@
+<!--.modal.fade[id='bookModal'][tabIndex='-1']>modal-dialog>.modal-content>form-->
+<!-- class="modal fade": Bootstrap'te bir modal oluşturur ve fade sınıfı ile animasyonlu geçiş sağlar.
+     id="bookModal": Bu modal'ı tanımlayan bir kimlik (ID). JavaScript ile bu modal'ı açıp kapatmak için kullanılır.
+     tabIndex="-1": Bu, modal'a klavyeyle odaklanılmasını engellemek için kullanılır. Modal açıkken odağı başka bir yere kaydırmak istemezsiniz.
+     <modal-dialog> : Bu eleman, modal'ın boyutunu ve yerleşimini ayarlamak için kullanılır (örneğin, modal'ı ortalamak ya da genişliğini ayarlamak için
+     <div class="modal-content"> : Modal'ın içeriğini barındıran elemandır. Modal'ın gövdesinde görüntülenen her şey buraya yerleştirilir.
+      data-bs-dismiss="modal": Bootstrap'te modal'ı kapatmak için kullanılır. Bu attribute'u içeren butona tıklandığında, modal penceresi otomatik olarak kapanır.
+      type="submit": Bir formun verilerini sunucuya göndermek için kullanılır. Bu buton formun submit (gönderme) işlemini tetikler ve form doğrulama kuralları sağlanıyorsa form sunucuya gönderilir.
+ -->
+<div class="modal fade" id="bookModal" tabIndex="-1">
+  <div div class="modal-dialog">
+    <div class="modal-content">
+      <form>
+        <!-- .modal-header>h5.modal-title+button.btn-close[data-bs-dismiss='modal'] -->
+        <div class="modal-header">
+          <h5 class="modal-title">Book Details</h5>
+          <button class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- .modal-body -->
+        <div class="modal-body"></div>
+
+        <!-- .modal-footer>button.btn.btn-secondary[data-bs-dismiss='modal']+button.btn-primary[type='submit'] -->
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button class="btn btn-primary" type="submit">Save Changes</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
