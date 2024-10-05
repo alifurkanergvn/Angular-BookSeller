@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {Book} from "../../models/book.model";
 import {BookService} from "../../services/book.service";
 
@@ -13,12 +13,16 @@ export class BookComponent {
 
   book: Book = new Book();
   errorMessage: string = "";  //Kitap kaydederken sunucuya gönderdiğimiz isteklerde hata oluşursa hatayı göstereceğiz
+  //@Output(): Bileşen içinde bir olay tetiklendiğinde, bu olay ebeveyn(AdminComponent) bileşene iletilir.
+  //EventEmitter Angular'ın olay yayma mekanizmasıdır. Bileşen içinden bu event emitter aracılığıyla olaylar yayılır.
+  @Output() save = new EventEmitter<any>();
 
   constructor(private bookService: BookService) {
   }
 
   saveBook() {
     this.bookService.saveBook(this.book).subscribe(data => {
+      this.save.emit(data);  //olayın tetiklenmesi için kullanılır.
       $('#bookModal').modal('hide');
       //...
     }, error => {

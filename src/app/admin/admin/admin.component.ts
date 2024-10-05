@@ -27,4 +27,10 @@ export class AdminComponent implements OnInit {
     this.child?.showBookModal();
   }
 
+  protected readonly event = event;
+
+  saveBookWatcher(book: Book) {
+    this.bookList.push(book); //Verimizi child'tan parent a paylaşmış olduk burada.
+    //Böylece Create Book modalını Save Changes dediğimizde anında All Books a düşmüş olacak yeni verimiz.
+  }
 }

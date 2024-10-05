@@ -61,5 +61,5 @@
   </div>
 </div>
 
-
-<app-book></app-book>
+<!-- Parent'e(AdminComponent) bir event izleyici eklemem gerekiyor. Child taki event ile aynı isimde olmalı -->
+<app-book  (save)="saveBookWatcher($event)"></app-book>
