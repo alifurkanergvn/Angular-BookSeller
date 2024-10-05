@@ -12,6 +12,9 @@
 <!--  .container>.pt-5 -->
 <div class="container">
   <div class="pt-5">
+    <div class="alert alert-danger" *ngIf="errorMessage">
+      {{errorMessage}}
+    </div>
 <!--    .card>.card-header+.card-body>table.table.table-stripe-->
     <div class="card">
       <div class="card-header">
@@ -51,7 +54,7 @@
             <td>{{item.createTime | date:'medium'}}</td>
             <td>
               <button class="btn btn-primary me-1" (click)="editBookRequest(item)">Edit</button>
-              <button class="btn btn-danger">Delete</button>
+              <button class="btn btn-danger" (click)="deleteBook(item,ind)">Delete</button>
             </td>
           </tr>
           </tbody>

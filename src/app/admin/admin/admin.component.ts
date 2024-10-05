@@ -12,6 +12,7 @@ export class AdminComponent implements OnInit {
 
   bookList: Array<Book> = [];
   selectedBook: Book = new Book();
+  errorMessage: string = "";
 
   //Ana bileşenden(AdminComponent) BookComponent'in metotlarına veya özelliklerine doğrudan erişebilmek için yaptık.
   // undefined yazdık çünkü bileşen henüz yüklenmemiş olabilir
@@ -46,5 +47,17 @@ export class AdminComponent implements OnInit {
       this.bookList.push(book); //Verimizi child'tan parent a paylaşmış olduk burada.
       //Böylece Create Book modalını Save Changes dediğimizde anında All Books a düşmüş olacak yeni verimiz.
     }
+  }
+
+  deleteBook(item: Book, ind: number){
+    this.bookService.deleteBook(item).subscribe(data => {
+      //splice() metodu, bir diziden (array) öğeleri eklemek, çıkarmak veya değiştirmek için kullanılır.
+      //startIndex: İşlemin başlayacağı dizin (indeks). Bu, diziden elemanların kaldırılmaya başlayacağı yer anlamına gelir.
+      //deleteCount: Diziden kaç öğe kaldırılacağını belirtir. Eğer 1 ise, o indeksten itibaren 1 öğe silinir.
+      this.bookList.splice(ind, 1);
+    },error => {
+      this.errorMessage = 'Unexpected error occured.';
+      console.log(error);
+    })
   }
 }
