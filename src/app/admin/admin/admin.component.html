@@ -50,7 +50,7 @@
             <td>{{item.author}}</td>
             <td>{{item.createTime | date:'medium'}}</td>
             <td>
-              <button class="btn btn-primary me-1">Edit</button>
+              <button class="btn btn-primary me-1" (click)="editBookRequest(item)">Edit</button>
               <button class="btn btn-danger">Delete</button>
             </td>
           </tr>
@@ -61,5 +61,6 @@
   </div>
 </div>
 
-<!-- Parent'e(AdminComponent) bir event izleyici eklemem gerekiyor. Child taki event ile aynı isimde olmalı -->
-<app-book  (save)="saveBookWatcher($event)"></app-book>
+<!-- Parent'e(AdminComponent) bir event izleyici eklemem gerekiyor. Child taki event(save) ile aynı isimde olmalı -->
+<!-- Parentteki selectedBook'u Child'taki book nesnesine gönderiyoruz. -->
+<app-book [book]="selectedBook" (save)="saveBookWatcher($event)"></app-book>

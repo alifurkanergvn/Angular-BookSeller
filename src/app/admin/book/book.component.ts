@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Book} from "../../models/book.model";
 import {BookService} from "../../services/book.service";
 
@@ -11,7 +11,10 @@ declare var $: any;  //Jquary tanımı
 })
 export class BookComponent {
 
-  book: Book = new Book();
+  //@Input(): Bir bileşenin ebeveyn bileşeninden (parent component) veri almasını sağlar.
+  //new Book(): Bileşen dışarıdan bir book nesnesi almazsa, bu tanım ile boş bir Book nesnesi atanır.
+  // Bu, book'un başlangıçta undefined olmasını önler.
+  @Input() book: Book = new Book();
   errorMessage: string = "";  //Kitap kaydederken sunucuya gönderdiğimiz isteklerde hata oluşursa hatayı göstereceğiz
   //@Output(): Bileşen içinde bir olay tetiklendiğinde, bu olay ebeveyn(AdminComponent) bileşene iletilir.
   //EventEmitter Angular'ın olay yayma mekanizmasıdır. Bileşen içinden bu event emitter aracılığıyla olaylar yayılır.
