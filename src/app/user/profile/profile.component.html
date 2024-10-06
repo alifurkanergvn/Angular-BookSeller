@@ -1,1 +1,52 @@
-<p>profile works!</p>
+<!--
+1. "thead" kısmında sütun başlıkları oluşturur:
+   - "th[scope='col']*4": Bu ifade, 4 adet sütun başlığı (th) elementi oluşturur.
+     - "th": Tablo başlık hücresidir. Genellikle, sütunların neyi temsil ettiğini belirtmek için kullanılır.
+     - "[scope='col']": Bu, başlığın sütun kapsamını belirtir.
+
+2. "tbody" kısmında her satır için:
+   - "tr": Her bir satırı temsil eden bir tablo satırıdır.
+   - "th[scope='row']": Bu, satır için bir başlık (th) elementi oluşturur. Genellikle, satırdaki verilerin neyi temsil ettiğini belirtir.
+     - "[scope='row']": Bu, başlığın satır kapsamını belirtir.
+   - "td*3": Bu ifade, her satırda 3 adet veri hücresi (td) elementi oluşturur.
+     - "td": Tablo veri hücresidir. Bu hücreler, tabloya veri eklemek için kullanılır.
+
+Sonuç olarak, bu yapı aşağıdaki gibi bir tablo oluşturur:
+- 4 sütun başlığı (thead kısmında).
+- Her satırda bir başlık (th) ve 3 veri hücresi (td) bulunur (tbody kısmında).
+
+Bu yapı, temel bir tablo oluşturmak için kullanılabilir ve CSS veya JavaScript ile daha fazla stil ve işlev eklenebilir.
+-->
+
+
+<div class="container">
+  <div class="pt-5">
+    <!-- .card>.card-header+.card-body>table.table-striped-->
+    <div class="card">
+      <div class="card-header">
+        <h3>All Purchased Items</h3>
+      </div>
+      <div class="card-body">
+        <table class="table table-striped">
+          <!-- (thead>tr>th[scope='col']*4)+tbody>tr>th[scope='row']+td*3 -->
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Title</th>
+              <th scope="col">Price</th>
+              <th scope="col">Date</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let item of purchaseItemList; index as ind">
+            <th scope="row">{{ind+1}}</th>
+            <td>{{item.title}}</td>
+            <td>{{item.price | currency: 'TRY':'symbol-narrow'}}</td>
+            <td>{{item.purchaseTime | date:'medium'}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
