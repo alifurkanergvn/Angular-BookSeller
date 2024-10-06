@@ -1,1 +1,46 @@
-<p>home works!</p>
+<!--
+  Açıklamalar:
+  - class="d-flex": Bu, Bootstrap'in "display: flex" sınıfıdır. Elemanları flexbox modeliyle hizalar ve düzenler.
+                    Flexbox, esnek kutu düzenlemesi sağlar ve esnek düzenler oluşturmak için kullanılır.
+  - class="flex-wrap": Flex kutuları taşarsa, bir sonraki satıra geçmesini sağlar. Elemanlar bir satıra sığmazsa alt satıra taşınır.
+  - [icon]: Property binding ifadesidir. Bu, HTML'deki bir öğenin bir özelliğine (property) dinamik veri bağlamayı sağlar.
+            Angular, köşeli parantez ([]) kullanarak bir bileşen veya HTML elementine JavaScript'ten veri aktarır.
+-->
+
+
+<div class="container p3">
+  <div class="alert alert-danger" *ngIf="errorMessage">
+    {{errorMessage}}
+  </div>
+  <div class="alert alert-success" *ngIf="infoMessage">
+    {{infoMessage}}
+  </div>
+
+  <!--  .d-flex.flex-wrap>.card.m-3[style='width: 300px; background-color: lightgray;']-->
+  <div class="d-flex flex-wrap">
+    <div
+      *ngFor="let item of bookList; index as ind"
+      class="card m-3"
+      style="width: 300px; background-color: lightgray;"
+    >
+      <fa-icon [icon]="faBook" class="ms-auto me-auto book-icon"></fa-icon>
+
+      <!-- .card-body>h5.card-title+h6.card-subtitle.mb-2.text-muted+p.card-text+button.btn.w-100.mt-3[style='backgruond-color: mediumseagreen;'] -->
+      <div class="card-body">
+        <h5 class="card-title">{{item.title}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">
+          {{item.price | currency: 'TRY':'symbol-narrow'}}
+        </h6>
+        <p class="card-text">
+          {{item.description}}
+        </p>
+        <button (click)="purchase(item)" class="btn w-100 mt-3" style="background-color: mediumseagreen;">
+          Buy
+        </button>
+      </div>
+
+
+    </div>
+  </div>
+
+</div>
